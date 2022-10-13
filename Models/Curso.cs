@@ -26,13 +26,13 @@ namespace ExemplosExplorandoC.Models
         }
 
         public void ListarAlunos() {
-            Console.WriteLine("Alunos do Curso: "+Nome);
+            Console.WriteLine("Alunos do Curso: "+Nome); //CONCATENAÇÃO
+            int count = 1;
             foreach (Pessoa aluno in Alunos)
             {
-                Console.WriteLine(aluno.NomeCompleto);
+                Console.WriteLine($" N° {count} - {aluno.NomeCompleto}"); // INTERPOLAÇÃO
+                count++;
             }
-
         }
-
     }
 }
