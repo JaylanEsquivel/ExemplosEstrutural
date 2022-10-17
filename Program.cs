@@ -4,6 +4,108 @@ using System.Globalization;
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("pt-BR");
 // MODIFICA A CONFIGURAÇÃO DA LOCALIZAÇÃO DO MEU CODIGO
 
+// UTILIZANDO DICTIONARY - chave unica que nao dveve se repetir
+
+Dictionary<string, string> estados = new Dictionary<string, string>();
+
+estados.Add("BA","Bahia");
+estados.Add("SP","São Paulo");
+estados.Add("PE","Pernambuco");
+
+foreach (var item in estados)
+{
+    Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+}
+Console.WriteLine("-_------__--__--_--__");
+estados.Remove("BA");
+
+estados["SP"] = "São Paulo - Alterado";
+
+foreach (var item in estados)
+{
+    Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+}
+
+string chave = "BA";
+
+if (estados.ContainsKey(chave)) {
+    Console.WriteLine("EXITE NO DICTIONARY");
+}else { 
+    Console.WriteLine("NÂO EXISTE NO DICTIONARY");
+}
+
+// UTILIZANDO PILHA STACK - o ultimo a entrar é o primeiro a sair
+
+// Stack<int> pilha = new Stack<int>();
+
+// pilha.Push(4);
+// pilha.Push(6);
+// pilha.Push(8);
+// pilha.Push(10);
+
+
+// foreach (int linha in pilha)
+// {
+//     Console.WriteLine(linha);
+// }
+
+// Console.WriteLine($"Removendo o elemento do topo {pilha.Pop()}");
+
+// foreach (int linha in pilha)
+// {
+//     Console.WriteLine(linha);
+// }
+
+
+
+
+// UTILIZANDO FILA QUEUE - o primeiro a entrar é o primeiro a sair
+
+// Queue<int> file = new Queue<int>();
+
+// file.Enqueue(2);
+// file.Enqueue(3);
+// file.Enqueue(4);
+
+// foreach (int item in file)
+// {
+//     Console.WriteLine(item);
+// }
+
+// Console.WriteLine($"Removendo elemneto {file.Dequeue()}");
+
+// foreach (int item in file)
+// {
+//     Console.WriteLine(item);
+// }
+
+
+
+
+// UTILIZANDO TRY E CATCH E FINALLY
+// try
+// {
+//         string[] leituras = File.ReadAllLines("Arquivos/arquivos_Leitura.txt");
+
+//         foreach (string linha in leituras)
+//         {
+//             Console.WriteLine(linha);
+//         }
+
+// }catch (Exception e) {
+//     Console.WriteLine("Erro ao tentar acessar o arquivo");
+// }finally {
+//     Console.WriteLine("Cheguei até aqui");
+// }
+
+
+
+
+
+
+
+
+/*
 Pessoa p1 = new Pessoa("Jaylan", "Esquivel");
 p1.Idade  = 24;
 
@@ -54,3 +156,5 @@ DateTime data1 = DateTime.Parse(dataString);
 DateTime.TryParseExact(dataString, "dd-mm-yyyy HH:mm", CultureInfo.InvariantCulture,DateTimeStyles.None, out DateTime data2);
 
 Console.WriteLine(data2);
+
+*/
