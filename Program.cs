@@ -4,35 +4,83 @@ using System.Globalization;
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("pt-BR");
 // MODIFICA A CONFIGURAÇÃO DA LOCALIZAÇÃO DO MEU CODIGO
 
+// IF TERNARIO
+
+
+int num = 1;
+bool ehpar = false;
+ehpar = num % 2 == 0;
+Console.WriteLine($"o numero {num} é"+ (ehpar ? "par" : "Impar"));
+
+
+if (num % 2 == 0) { 
+    Console.WriteLine("PAR");
+}else { 
+    Console.WriteLine("IMPAR");
+
+}
+
+
+
+
+
+//DESCONTRUCT
+
+// Pessoa p1 = new Pessoa("Jaylan", "Esquivel");
+// (string nome, string sobrenome) = p1;
+// Console.WriteLine($"{nome} {sobrenome}");
+
+
+//UTILIZANDO TUPLAS
+// tuplas em metodos
+// LeituraArquivo arquivo = new LeituraArquivo();
+
+// var (sucesso,linhasArquivo,_) = arquivo.LerAquivo("Arquivos/arquivosLeitura.txt"); // utiliza anderlaine para descartar o retorno caso nao seja utilizado
+
+
+// if (sucesso) {
+//     //Console.WriteLine($"Leitura de arquivo com: {quantidadeLinhas}");
+//     foreach (string item in linhasArquivo)
+//     {
+//         Console.WriteLine(item);
+//     }
+// }else {
+//     Console.WriteLine("Não foi possivel ler o arquivo");
+// }
+
+
+// (int, string, string, decimal) tupla = (1, "Jaylan", "Esquivel", 1.80M);
+// Console.WriteLine($"ID: {tupla.Item1} / NOME: {tupla.Item2} / SOBRENOME: {tupla.Item3} / ALTURA {tupla.Item4}");
+
 // UTILIZANDO DICTIONARY - chave unica que nao dveve se repetir
 
-Dictionary<string, string> estados = new Dictionary<string, string>();
+// Dictionary<string, string> estados = new Dictionary<string, string>();
 
-estados.Add("BA","Bahia");
-estados.Add("SP","São Paulo");
-estados.Add("PE","Pernambuco");
+// estados.Add("BA","Bahia");
+// estados.Add("SP","São Paulo");
+// estados.Add("PE","Pernambuco");
 
-foreach (var item in estados)
-{
-    Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
-}
-Console.WriteLine("-_------__--__--_--__");
-estados.Remove("BA");
+// foreach (var item in estados)
+// {
+//     Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+// }
+// Console.WriteLine("-_------__--__--_--__");
+// estados.Remove("BA");
 
-estados["SP"] = "São Paulo - Alterado";
+// estados["SP"] = "São Paulo - Alterado";
 
-foreach (var item in estados)
-{
-    Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
-}
+// foreach (var item in estados)
+// {
+//     Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+// }
 
-string chave = "BA";
+// string chave = "BA";
 
-if (estados.ContainsKey(chave)) {
-    Console.WriteLine("EXITE NO DICTIONARY");
-}else { 
-    Console.WriteLine("NÂO EXISTE NO DICTIONARY");
-}
+// if (estados.ContainsKey(chave)) {
+//     Console.WriteLine("EXITE NO DICTIONARY");
+// }else { 
+//     Console.WriteLine("NÂO EXISTE NO DICTIONARY");
+// }
 
 // UTILIZANDO PILHA STACK - o ultimo a entrar é o primeiro a sair
 
