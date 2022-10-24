@@ -1,24 +1,40 @@
 ﻿using ExemplosExplorandoC.Models;
 // MODIFICA A CONFIGURAÇÃO DA LOCALIZAÇÃO DO MEU CODIGO
 using System.Globalization; 
+using Newtonsoft.Json;
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("pt-BR");
 // MODIFICA A CONFIGURAÇÃO DA LOCALIZAÇÃO DO MEU CODIGO
 
+// USANDO PACOTE NUGET
+
+DateTime dataAtual = DateTime.Now;
+List<Venda> listVenda = new List<Venda>();
+
+Venda v1 = new Venda(1, "Feijao", 10.50M,dataAtual);
+Venda v2 = new Venda(2, "Arroz", 8.50M,dataAtual);
+
+listVenda.Add(v1);
+listVenda.Add(v2);
+
+string serializado = JsonConvert.SerializeObject(listVenda, Formatting.Indented);
+
+File.WriteAllText("Arquivos/vendas.json",serializado);
+
+Console.WriteLine(serializado);
+
+
+
 // IF TERNARIO
+// int num = 1;
+// bool ehpar = false;
+// ehpar = num % 2 == 0;
+// Console.WriteLine($"o numero {num} é"+ (ehpar ? "par" : "Impar"));
+// if (num % 2 == 0) { 
+//     Console.WriteLine("PAR");
+// }else { 
+//     Console.WriteLine("IMPAR");
 
-
-int num = 1;
-bool ehpar = false;
-ehpar = num % 2 == 0;
-Console.WriteLine($"o numero {num} é"+ (ehpar ? "par" : "Impar"));
-
-
-if (num % 2 == 0) { 
-    Console.WriteLine("PAR");
-}else { 
-    Console.WriteLine("IMPAR");
-
-}
+// }
 
 
 
