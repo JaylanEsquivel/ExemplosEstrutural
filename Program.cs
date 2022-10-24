@@ -5,22 +5,40 @@ using Newtonsoft.Json;
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("pt-BR");
 // MODIFICA A CONFIGURAÇÃO DA LOCALIZAÇÃO DO MEU CODIGO
 
-// USANDO PACOTE NUGET
+// DESERIALIZAR
 
-DateTime dataAtual = DateTime.Now;
-List<Venda> listVenda = new List<Venda>();
 
-Venda v1 = new Venda(1, "Feijao", 10.50M,dataAtual);
-Venda v2 = new Venda(2, "Arroz", 8.50M,dataAtual);
+string conteudoArquivo = File.ReadAllText("Arquivos/vendas.json");
 
-listVenda.Add(v1);
-listVenda.Add(v2);
+List<VendaNewImport> listVenda = JsonConvert.DeserializeObject<List<VendaNewImport>>(conteudoArquivo);
 
-string serializado = JsonConvert.SerializeObject(listVenda, Formatting.Indented);
+foreach (VendaNewImport venda in listVenda) {
 
-File.WriteAllText("Arquivos/vendas.json",serializado);
+    Console.WriteLine($"id {venda.Id} Produto {venda.Produto} Valor {venda.Valor} data {venda.DataVenda.ToString("dd/MM/yyyy HH:mm")} ");
 
-Console.WriteLine(serializado);
+}
+
+
+
+
+
+
+// USANDO PACOTE NUGET SERIALIZANDO
+
+// DateTime dataAtual = DateTime.Now;
+// List<Venda> listVenda = new List<Venda>();
+
+// Venda v1 = new Venda(1, "Feijao", 10.50M,dataAtual);
+// Venda v2 = new Venda(2, "Arroz", 8.50M,dataAtual);
+
+// listVenda.Add(v1);
+// listVenda.Add(v2);
+
+// string serializado = JsonConvert.SerializeObject(listVenda, Formatting.Indented);
+
+// File.WriteAllText("Arquivos/vendas.json",serializado);
+
+// Console.WriteLine(serializado);
 
 
 

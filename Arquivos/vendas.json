@@ -1,13 +1,13 @@
 [
   {
     "Id": 1,
-    "Produto": "Feijao",
+    "Nome_Produto": "Feijao",
     "Valor": 10.50,
     "DataVenda": "2022-10-24T14:26:29.3628222-03:00"
   },
   {
     "Id": 2,
-    "Produto": "Arroz",
+    "Nome_Produto": "Arroz",
     "Valor": 8.50,
     "DataVenda": "2022-10-24T14:26:29.3628222-03:00"
   }
